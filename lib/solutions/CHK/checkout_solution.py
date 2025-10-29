@@ -50,19 +50,16 @@ class CheckoutSolution:
         # Reject non strings
         if not isinstance(skus, str):
             return -1 
-        # Reject illegal input
-        if any(ch not in "ABCDEF" for ch in skus):
+        # Reject illegal input (A-Z only)
+        if any(ch not in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" for ch in skus):
             return -1
         
         counts = Counter(skus)
-        a = counts.get("A", 0)
-        b = counts.get("B", 0)
-        c = counts.get("C", 0)
-        d = counts.get("D", 0)
-        e = counts.get("E", 0)
-        f = counts.get("F", 0)
 
         total = 0
+
+        # 
+        # Determine the best inter-item promotional discounts before anything else
 
         # E offer: 2E get one B free
         # We want to apply this first because it reduces B count
@@ -91,6 +88,15 @@ class CheckoutSolution:
 
         # D: 15 each
         total += d *15  
+
+
+
+
+
+
+
+
+
 
         return total
 
