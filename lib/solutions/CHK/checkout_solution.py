@@ -26,6 +26,3 @@ class CheckoutSolution:
         total += d *15                         # D: 15 each
 
         return total
-
-
-
