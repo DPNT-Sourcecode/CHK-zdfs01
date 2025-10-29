@@ -58,8 +58,23 @@ class CheckoutSolution:
 
         total = 0
 
-        # 
-        # Determine the best inter-item promotional discounts before anything else
+        # === PRIORTY 1 ===
+        # Best inter-item promotional discounts
+
+
+
+        # === PRIORITY 2 ===
+        # Items with BOGOFF promotional discounts
+
+        # === PRIORITY 3 ===
+        # Items with multi tiered promotional discounts
+
+        # === PRIORITY 4 ===
+
+
+
+    
+
 
         # E offer: 2E get one B free
         # We want to apply this first because it reduces B count
@@ -99,6 +114,7 @@ class CheckoutSolution:
 
 
         return total
+
 
 
 
