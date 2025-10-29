@@ -48,7 +48,7 @@ class CheckoutSolution:
         # E pricing is 40 each
         total += e * 40
 
-        # F offer is 2F get one free so you need 3F for price of 2F
+        # F offer: 2F get one free so you need 3F for price of 2F
         total += (f // 3) * 20
         total += (f % 3) * 10
 
@@ -69,5 +69,6 @@ class CheckoutSolution:
         total += d *15  
 
         return total
+
 
 
