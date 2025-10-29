@@ -81,7 +81,7 @@ class CheckoutSolution:
         q = max(0, q - freebie_q)
         total += r * 50
 
-        # === PRIORITY 2 ===
+        # === PRIORITY 3 ===
         # Items with BOGOFF promotional discounts
 
         # F offer: 2F get one free so you need 3F for price of 2F
@@ -92,7 +92,7 @@ class CheckoutSolution:
         u = counts.get ("U", 0)
         total += (u // 4) * 120 + (u % 4) * 40
 
-        # === PRIORITY 3 ===
+        # === PRIORITY 4 ===
         # Items with multi-tiered promotional discounts
 
         # A offer: 5A for 200, 3A for 130, else 50 each
@@ -116,7 +116,7 @@ class CheckoutSolution:
         total += (remainder_v // 2) * 90
         total += (remainder_v % 2) * 50
 
-        # === PRIORITY 4 ===
+        # === PRIORITY 5 ===
         # Items with basic-tiered promotional discounts 
 
         # B offer: 2B for 45, else 30 (after deductions)
@@ -133,7 +133,7 @@ class CheckoutSolution:
         # Q offer: 3Q for 80, else 30 (after deductions)
         total += (q // 3) * 80 + (q % 3) * 30
 
-        # === PRIORITY 5 ===
+        # === PRIORITY 6 ===
         # Items with no offers
 
         total += counts.get("C", 0) * 20
@@ -164,7 +164,12 @@ Changes:
 - Z price change 21
 - Group offer: Any (S,T,X,Y,Z) for 45
 
-We will need to try and sort the group discount for the 
-
+We will need to try and sort the group discount for the most expensive items first to favour the customer
+Which is:
+Z - 21
+Y - 20
+T - 20
+S - 20
+X - 17
 
 """
