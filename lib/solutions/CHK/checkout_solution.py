@@ -32,12 +32,23 @@ class CheckoutSolution:
         # E pricing is 40 each
         total += e * 40
 
-        # A offer 5A for 200, 3A for 130, else 50 each
-        total += (a // 5) * 200
-         = a % 5
-        total =+ ()
-
+        # A offer: 5A for 200, 3A for 130, else 50 each
         # We need to apply larger offer first because it favours the customer
+        total += (a // 5) * 200
+        remainder_a = a % 5
+        total += (remainder_a // 3) * 130
+        total += (remainder_a % 3) * 50
+
+        # B offer: 2B for 45, else 30 each (post free B dediction)
+        total += (b // 2) * 45
+        
+
+
+
+
+
+
+
 
 
         # Offers 
@@ -47,5 +58,6 @@ class CheckoutSolution:
         total += d *15                         # D: 15 each
 
         return total
+
 
 
