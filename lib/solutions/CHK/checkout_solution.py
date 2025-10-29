@@ -13,6 +13,12 @@ class CheckoutSolution:
         - C: 20 each
         - D: 15 each
         - E: 40 each, 2E gives one B free
+
+        Args:
+            skus: A string of SKU letters representing items in the basket
+        
+        Returns:
+            The total checkout value as an integer or -1 for invalid input
         
         
         """
@@ -24,8 +30,6 @@ class CheckoutSolution:
         if any(ch not in "ABCDE" for ch in skus):
             return -1
         
-
-
         counts = Counter(skus)
         a = counts.get("A", 0)
         b = counts.get("B", 0)
@@ -60,6 +64,7 @@ class CheckoutSolution:
         total += d *15  
 
         return total
+
 
 
 
