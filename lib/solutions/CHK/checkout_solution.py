@@ -136,13 +136,9 @@ class CheckoutSolution:
             for price, item, count in discount_group_items:
                 group_items_complete.extend([price] * count)
 
-            group_items_complete
-
-
-
-
-
-
+            group_items_complete.sort(reverse = True)
+            items_remaining_prices = group_items_complete[items_removed:]
+            total += sum(items_remaining_prices)
 
         # === PRIORITY 3 ===
         # Items with BOGOFF promotional discounts
@@ -210,5 +206,6 @@ class CheckoutSolution:
         total += counts.get("W", 0) * 20
 
         return total
+
 
 
