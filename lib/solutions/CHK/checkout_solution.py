@@ -59,7 +59,7 @@ class CheckoutSolution:
         total = 0
 
         # === PRIORTY 1 ===
-        # Best inter-item promotional discounts
+        # Inter-items promotional discounts
 
 
 
@@ -67,9 +67,32 @@ class CheckoutSolution:
         # Items with BOGOFF promotional discounts
 
         # === PRIORITY 3 ===
-        # Items with multi tiered promotional discounts
+        # Items with multi-tiered promotional discounts
 
         # === PRIORITY 4 ===
+        # Items with basic-tiered promotional discounts 
+
+        # === PRIORITY 5 ===
+        # Items with no offers
+
+        total += counts.get("C", 0) * 20
+        total += counts.get("D", 0) * 15
+        total += counts.get("G", 0) * 20
+        total += counts.get("I", 0) * 35
+        total += counts.get("J", 0) * 60
+        total += counts.get("L", 0) * 90
+        total += m * 15 #
+        total += counts.get("D", 0) * 15
+        total += counts.get("D", 0) * 15
+        total += counts.get("D", 0) * 15
+        total += counts.get("D", 0) * 15
+        total += counts.get("D", 0) * 15
+        total += counts.get("D", 0) * 15
+        total += counts.get("D", 0) * 15
+        total += counts.get("D", 0) * 15
+        total += counts.get("D", 0) * 15
+        total += counts.get("D", 0) * 15
+
 
 
 
@@ -114,8 +137,3 @@ class CheckoutSolution:
 
 
         return total
-
-
-
-
-
