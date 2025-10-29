@@ -110,17 +110,21 @@ class CheckoutSolution:
         total += (remainder_h // 5) * 45
         total += (remainder_h % 5) * 10
 
-        # V offer: 10H for 80, 5H for 45, else 10 each
-        h = counts.get("H", 0)
-        total += (h // 10) * 80
-        remainder_h = h % 10
-        total += (remainder_h // 5) * 45
-        total += (remainder_h % 5) * 10
-
-
+        # V offer: 3V for 130, 2V for 90, else 50 each
+        v = counts.get("V", 0)
+        total += (v // 3) * 130
+        remainder_v = v % 3
+        total += (remainder_v // 2) * 90
+        total += (remainder_v % 2) * 50
 
         # === PRIORITY 4 ===
         # Items with basic-tiered promotional discounts 
+
+        # B offer: 2B for 45, else 30 (after deductions)
+        total += (b // 2) * 45 + (b % 2) * 30
+
+        # K offer: 2K for 150, else 30 (after deductions)
+        total += (b // 2) * 45 + (b % 2) * 30
 
         # === PRIORITY 5 ===
         # Items with no offers
@@ -139,43 +143,6 @@ class CheckoutSolution:
         total += counts.get("X", 0) * 90
         total += counts.get("Y", 0) * 10
         total += counts.get("Z", 0) * 50
-
-        # E offer: 2E get one B free
-        # We want to apply this first because it reduces B count
-        freebie_b = (e // 2)
-        b = max(0, b - freebie_b)
-
-        # E pricing is 40 each
-        total += e * 40
-
-        # F offer: 2F get one free so you need 3F for price of 2F
-        total += (f // 3) * 20
-        total += (f % 3) * 10
-
-        # A offer: 5A for 200, 3A for 130, else 50 each
-        # We need to apply larger offer first because it favours the customer
-        total += (a // 5) * 200
-        remainder_a = a % 5
-        total += (remainder_a // 3) * 130
-        total += (remainder_a % 3) * 50
-
-        # B offer: 2B for 45, else 30 each (post free B dediction)
-        total += (b // 2) * 45 + (b % 2) * 30
-
-        # C: 20 each
-        total += c * 20
-
-        # D: 15 each
-        total += d *15  
-
-
-
-
-
-
-
-
-
 
         return total
 
