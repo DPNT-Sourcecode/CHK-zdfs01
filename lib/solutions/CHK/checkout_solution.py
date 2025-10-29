@@ -19,7 +19,10 @@ class CheckoutSolution:
 
         total = 0
 
-
+        # Offers 
+        total += (a // 3) * 130 + (a % 3) * 50 # A: 3 for 130, else 50 each
+        total += (b // 2) * 45 + (b % 2) * 30 # B: 2 for 35, else 30 each
+        total += c *
 
 
 
