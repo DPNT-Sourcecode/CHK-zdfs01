@@ -4,7 +4,18 @@ class CheckoutSolution:
 
     # skus = unicode string
     def checkout(self, skus: str | None) -> int:
-        """This function does XYZ"""
+        """
+        Calculate the total checkout price for the given SKU string.
+
+        Pricing and offers:
+        - A: 50 each, 3A for 130, 5A for 200
+        - B: 30 each, 2B for 45
+        - C: 20 each
+        - D: 15 each
+        - E: 40 each, 2E gives one B free
+        
+        
+        """
 
         # Reject non strings
         if not isinstance(skus, str):
@@ -40,22 +51,13 @@ class CheckoutSolution:
         total += (remainder_a % 3) * 50
 
         # B offer: 2B for 45, else 30 each (post free B dediction)
-        total += (b // 2) * 45
-        
+        total += (b // 2) * 45 + (b % 2) * 30
 
+        # C: 20 each
+        total += c * 20
 
-
-
-
-
-
-
-
-        # Offers 
-        total += (a // 3) * 130 + (a % 3) * 50 # A: 3 for 130, else 50 each
-        total += (b // 2) * 45 + (b % 2) * 30  # B: 2 for 45, else 30 each
-        total += c * 20                        # C: 20 each
-        total += d *15                         # D: 15 each
+        # D: 15 each
+        total += d *15  
 
         return total
 
