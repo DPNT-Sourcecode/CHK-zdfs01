@@ -1,3 +1,26 @@
+"""
+ROUND 5 QUESTION NOTES
+
+We will need some complex handling to deal with the new offers
+There is a new group discount for (S,T,X,Y,Z)
+ 
+Changes:
+- K price change 70, offer 2K for 120
+- X price change 17
+- S price change 20
+- Z price change 21
+- Group offer: Any (S,T,X,Y,Z) for 45
+
+We will need to try and sort the group discount for the most expensive items first to favour the customer
+Which is:
+Z - 21
+Y - 20
+T - 20
+S - 20
+X - 17
+
+"""
+
 from collections import Counter
 
 class CheckoutSolution:
@@ -109,6 +132,13 @@ class CheckoutSolution:
         if items_remaining > 0:
             items_removed = discount_group_deal * 3
 
+            group_items_complete = []
+            for price, item, count in discount_group_items:
+                group_items_complete.extend([price] * count)
+
+            group_items_complete
+
+
 
 
 
@@ -177,34 +207,8 @@ class CheckoutSolution:
         total += counts.get("L", 0) * 90
         total += m * 15
         total += counts.get("O", 0) * 10
-        total += counts.get("S", 0) * 30
-        total += counts.get("T", 0) * 20
         total += counts.get("W", 0) * 20
-        total += counts.get("X", 0) * 90
-        total += counts.get("Y", 0) * 10
-        total += counts.get("Z", 0) * 50
 
         return total
-    
-"""
-We will need some complex handling to deal with the new offers
-There is a new group discount for (S,T,X,Y,Z)
- 
-Changes:
-- K price change 70, offer 2K for 120
-- X price change 17
-- S price change 20
-- Z price change 21
-- Group offer: Any (S,T,X,Y,Z) for 45
-
-We will need to try and sort the group discount for the most expensive items first to favour the customer
-Which is:
-Z - 21
-Y - 20
-T - 20
-S - 20
-X - 17
-
-"""
 
 
