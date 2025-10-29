@@ -61,7 +61,14 @@ class CheckoutSolution:
         # === PRIORTY 1 ===
         # Inter-items promotional discounts
 
+        # E offer: 2E get one B free
+        e = counts.get("E", 0)
+        b = counts.get("B", 0)
+        freebie_b = (e // 2)
+        b = max(0, b - freebie_b)
+        total += e * 40
 
+        # 
 
         # === PRIORITY 2 ===
         # Items with BOGOFF promotional discounts
@@ -81,23 +88,14 @@ class CheckoutSolution:
         total += counts.get("I", 0) * 35
         total += counts.get("J", 0) * 60
         total += counts.get("L", 0) * 90
-        total += m * 15 #
-        total += counts.get("D", 0) * 15
-        total += counts.get("D", 0) * 15
-        total += counts.get("D", 0) * 15
-        total += counts.get("D", 0) * 15
-        total += counts.get("D", 0) * 15
-        total += counts.get("D", 0) * 15
-        total += counts.get("D", 0) * 15
-        total += counts.get("D", 0) * 15
-        total += counts.get("D", 0) * 15
-        total += counts.get("D", 0) * 15
-
-
-
-
-    
-
+        total += m * 15 # Come back to
+        total += counts.get("O", 0) * 10
+        total += counts.get("S", 0) * 30
+        total += counts.get("T", 0) * 20
+        total += counts.get("W", 0) * 20
+        total += counts.get("X", 0) * 90
+        total += counts.get("Y", 0) * 10
+        total += counts.get("Z", 0) * 50
 
         # E offer: 2E get one B free
         # We want to apply this first because it reduces B count
