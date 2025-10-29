@@ -123,8 +123,16 @@ class CheckoutSolution:
         # B offer: 2B for 45, else 30 (after deductions)
         total += (b // 2) * 45 + (b % 2) * 30
 
-        # K offer: 2K for 150, else 30 (after deductions)
-        total += (b // 2) * 45 + (b % 2) * 30
+        # K offer: 2K for 150, else 80
+        k = counts.get("K", 0)
+        total += (k // 2) * 150 + (k % 2) * 80
+
+        # P offer: 5P for 200, else 50
+        p = counts.get("P", 0)
+        total += (p // 5) * 200 + (p % 5) * 50
+
+        # Q offer: 3Q for 80, else 30 (after deductions)
+        total += (q // 3) * 80 + (b % 3) * 30
 
         # === PRIORITY 5 ===
         # Items with no offers
@@ -145,6 +153,7 @@ class CheckoutSolution:
         total += counts.get("Z", 0) * 50
 
         return total
+
 
 
 
