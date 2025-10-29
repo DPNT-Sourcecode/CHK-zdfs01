@@ -90,10 +90,23 @@ class CheckoutSolution:
         y = counts.get("Y", 0)
         z = counts.get("Z", 0)
 
-        discount_group_items = []
+        discount_group_items = [
+            (21, 'Z', z),
+            (20, 'Y', y),
+            (20, 'T', t),
+            (20, 'S', s),
+            (17, 'X', x)
 
+        ]
 
+        discount_group_total = s + t + x + y + z
+        discount_group_deal = discount_group_total // 3
+        total += discount_group_deal
 
+        # Items left over after discount group need to be removed
+        items_remaining = discount_group_total % 3
+
+        if 
 
 
 
@@ -191,3 +204,4 @@ S - 20
 X - 17
 
 """
+
