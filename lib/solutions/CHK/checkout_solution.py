@@ -13,6 +13,7 @@ class CheckoutSolution:
         - C: 20 each
         - D: 15 each
         - E: 40 each, 2E gives one B free
+        - F: 2F gives one F free
 
         Args:
             skus: A string of SKU letters representing items in the basket
