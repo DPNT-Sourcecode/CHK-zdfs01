@@ -13,14 +13,13 @@ class CheckoutSolution:
         - C: 20 each
         - D: 15 each
         - E: 40 each, 2E gives one B free
-        - F: 2F gives one F free
+        - F: 10 each, 2F gives one F free
 
         Args:
             skus: A string of SKU letters representing items in the basket
         
         Returns:
             The total checkout value as an integer or -1 for invalid input
-        
         
         """
 
@@ -37,6 +36,7 @@ class CheckoutSolution:
         c = counts.get("C", 0)
         d = counts.get("D", 0)
         e = counts.get("E", 0)
+        f = counts.get("F", 0)
 
         total = 0
 
@@ -47,6 +47,8 @@ class CheckoutSolution:
 
         # E pricing is 40 each
         total += e * 40
+
+        
 
         # A offer: 5A for 200, 3A for 130, else 50 each
         # We need to apply larger offer first because it favours the customer
@@ -65,3 +67,4 @@ class CheckoutSolution:
         total += d *15  
 
         return total
+
