@@ -80,14 +80,20 @@ class CheckoutSolution:
         q = counts.get("Q", 0)
         freebie_q = (r // 3)
         q = max(0, q - freebie_q)
-        total += r * 40
-
-
-
-
+        total += r * 50
 
         # === PRIORITY 2 ===
         # Items with BOGOFF promotional discounts
+
+        # F offer: 2F get one free so you need 3F for price of 2F
+        f = counts.get ("F", 0)
+        total += (f // 3) * 20 + (f % 3) * 10
+
+        # U offer: 3U get one free so you need 4U for price of 3U
+        u = counts.get ("U", 0)
+        total += (u // 4) * 120 + (f % 3) * 10
+
+
 
         # === PRIORITY 3 ===
         # Items with multi-tiered promotional discounts
@@ -151,4 +157,5 @@ class CheckoutSolution:
 
 
         return total
+
 
