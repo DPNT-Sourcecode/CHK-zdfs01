@@ -81,6 +81,24 @@ class CheckoutSolution:
         q = max(0, q - freebie_q)
         total += r * 50
 
+        # === PRIORTY 2 ===
+        # Any of (S,T,X,Y,Z) for 45, apply most expensive first to favour customer
+
+        s = counts.get("S", 0)
+        t = counts.get("T", 0)
+        x = counts.get("X", 0)
+        y = counts.get("Y", 0)
+        z = counts.get("Z", 0)
+
+        discount_group_items = []
+
+
+
+
+
+
+
+
         # === PRIORITY 3 ===
         # Items with BOGOFF promotional discounts
 
