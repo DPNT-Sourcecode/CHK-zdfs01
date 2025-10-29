@@ -152,3 +152,19 @@ class CheckoutSolution:
         total += counts.get("Z", 0) * 50
 
         return total
+    
+"""
+We will need some complex handling to deal with the new offers
+There is a new group discount for (S,T,X,Y,Z)
+ 
+Changes:
+- K price change 70, offer 2K for 120
+- X price change 17
+- S price change 20
+- Z price change 21
+- Group offer: Any (S,T,X,Y,Z) for 45
+
+We will need to try and sort the group discount for the 
+
+
+"""
