@@ -25,12 +25,18 @@ class CheckoutSolution:
         total = 0
 
         # E offer: 2E get one B free
+        # We want to apply this first because it reduces B count
+        freebie_b = (e // 2)
+        
+
+
+        # E pricing is 40 each
 
 
 
-        # A offer 5A for 200, 3A for 130, else 
+        # A offer 5A for 200, 3A for 130, else 50 each
 
-
+        # We need to apply larger offer first because it favours the customer
 
 
         # Offers 
@@ -40,3 +46,4 @@ class CheckoutSolution:
         total += d *15                         # D: 15 each
 
         return total
+
