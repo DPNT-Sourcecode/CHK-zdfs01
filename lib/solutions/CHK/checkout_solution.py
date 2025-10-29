@@ -64,7 +64,3 @@ class CheckoutSolution:
         total += d *15  
 
         return total
-
-
-
-
