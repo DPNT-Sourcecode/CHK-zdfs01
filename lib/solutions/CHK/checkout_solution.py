@@ -132,7 +132,7 @@ class CheckoutSolution:
         total += (p // 5) * 200 + (p % 5) * 50
 
         # Q offer: 3Q for 80, else 30 (after deductions)
-        total += (q // 3) * 80 + (b % 3) * 30
+        total += (q // 3) * 80 + (q % 3) * 30
 
         # === PRIORITY 5 ===
         # Items with no offers
@@ -153,6 +153,7 @@ class CheckoutSolution:
         total += counts.get("Z", 0) * 50
 
         return total
+
 
 
 
