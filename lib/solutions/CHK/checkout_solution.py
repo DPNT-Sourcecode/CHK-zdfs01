@@ -3,7 +3,7 @@ from collections import Counter
 class CheckoutSolution:
 
     # skus = unicode string
-    def checkout(self, skus):
+    def checkout(self, skus: str | None) -> int:
         # Reject non strings
         if not isinstance(skus, str):
             return -1 
@@ -25,7 +25,7 @@ class CheckoutSolution:
         total += c * 20                        # C: 20 each
         total += d *15                         # D: 15 each
 
-        
+        return total
 
 
 
