@@ -101,12 +101,14 @@ class CheckoutSolution:
 
         discount_group_total = s + t + x + y + z
         discount_group_deal = discount_group_total // 3
-        total += discount_group_deal
+        total += discount_group_deal * 45
 
         # Items left over after discount group need to be removed
         items_remaining = discount_group_total % 3
 
-        if 
+        if items_remaining > 0:
+            items_removed = discount_group_deal * 3
+
 
 
 
@@ -153,9 +155,9 @@ class CheckoutSolution:
         # B offer: 2B for 45, else 30 (after deductions)
         total += (b // 2) * 45 + (b % 2) * 30
 
-        # K offer: 2K for 150, else 80
+        # K offer: 2K for 120, else 70
         k = counts.get("K", 0)
-        total += (k // 2) * 150 + (k % 2) * 80
+        total += (k // 2) * 120 + (k % 2) * 70
 
         # P offer: 5P for 200, else 50
         p = counts.get("P", 0)
@@ -204,4 +206,5 @@ S - 20
 X - 17
 
 """
+
 
