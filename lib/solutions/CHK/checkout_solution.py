@@ -91,12 +91,33 @@ class CheckoutSolution:
 
         # U offer: 3U get one free so you need 4U for price of 3U
         u = counts.get ("U", 0)
-        total += (u // 4) * 120 + (f % 3) * 10
-
-
+        total += (u // 4) * 120 + (u % 4) * 40
 
         # === PRIORITY 3 ===
         # Items with multi-tiered promotional discounts
+
+        # A offer: 5A for 200, 3A for 130, else 50 each
+        a = counts.get("A", 0)
+        total += (a // 5) * 200
+        remainder_a = a % 5
+        total += (remainder_a // 3) * 130
+        total += (remainder_a % 3) * 50
+
+        # H offer: 10H for 80, 5H for 45, else 10 each
+        h = counts.get("H", 0)
+        total += (h // 10) * 80
+        remainder_h = h % 10
+        total += (remainder_h // 5) * 45
+        total += (remainder_h % 5) * 10
+
+        # V offer: 10H for 80, 5H for 45, else 10 each
+        h = counts.get("H", 0)
+        total += (h // 10) * 80
+        remainder_h = h % 10
+        total += (remainder_h // 5) * 45
+        total += (remainder_h % 5) * 10
+
+
 
         # === PRIORITY 4 ===
         # Items with basic-tiered promotional discounts 
@@ -157,5 +178,6 @@ class CheckoutSolution:
 
 
         return total
+
 
 
