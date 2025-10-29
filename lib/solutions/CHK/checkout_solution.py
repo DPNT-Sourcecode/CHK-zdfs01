@@ -27,7 +27,7 @@ class CheckoutSolution:
         if not isinstance(skus, str):
             return -1 
         # Reject illegal input
-        if any(ch not in "ABCDE" for ch in skus):
+        if any(ch not in "ABCDEF" for ch in skus):
             return -1
         
         counts = Counter(skus)
@@ -48,7 +48,9 @@ class CheckoutSolution:
         # E pricing is 40 each
         total += e * 40
 
-        
+        # F offer is 2F get one free so you need 3F for price of 2F
+        total += (f // 3) * 20
+        total += (f % 3) * 10
 
         # A offer: 5A for 200, 3A for 130, else 50 each
         # We need to apply larger offer first because it favours the customer
@@ -67,4 +69,5 @@ class CheckoutSolution:
         total += d *15  
 
         return total
+
 
