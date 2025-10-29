@@ -68,7 +68,23 @@ class CheckoutSolution:
         b = max(0, b - freebie_b)
         total += e * 40
 
-        # 
+        # N offer: 3N get one M free
+        n = counts.get("N", 0)
+        m = counts.get("M", 0)
+        freebie_m = (n // 3)
+        m = max(0, m - freebie_m)
+        total += n * 40
+
+        # R offer: 3R get one Q free
+        r = counts.get("R", 0)
+        q = counts.get("Q", 0)
+        freebie_q = (r // 3)
+        q = max(0, q - freebie_q)
+        total += r * 40
+
+
+
+
 
         # === PRIORITY 2 ===
         # Items with BOGOFF promotional discounts
@@ -88,7 +104,7 @@ class CheckoutSolution:
         total += counts.get("I", 0) * 35
         total += counts.get("J", 0) * 60
         total += counts.get("L", 0) * 90
-        total += m * 15 # Come back to
+        total += m * 15
         total += counts.get("O", 0) * 10
         total += counts.get("S", 0) * 30
         total += counts.get("T", 0) * 20
@@ -135,3 +151,4 @@ class CheckoutSolution:
 
 
         return total
+
